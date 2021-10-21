@@ -22,6 +22,7 @@ $doc = Factory::getDocument();
 $modPath = Uri::root(true).'/modules/'.$module->module;
 $doc->addStylesheet( $modPath.'/assets/css/odesign.css' );
 $doc->addScript( $modPath.'/assets/js/odesign.js' );
+echo 'Saikot';
 ?>
 
 <!--====== Main Map Area =====-->
