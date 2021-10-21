@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" client="site" method="upgrade">
+	<name>MOD_SPGOOGLEMAP</name>
+	<creationDate>October 2021</creationDate>
+	<author>SymphonyTheme</author>
+	<authorEmail>info@symphonytheme.com</authorEmail>
+	<authorUrl>www.symphonytheme.com</authorUrl>
+	<copyright>Copyright (C) 2021 SymphonyTheme. All rights reserved</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.0</version>
+	<description>MOD_SPGOOGLEMAP_XML_DESCRIPTION</description>
+  <!-- <namespace>Joomla\Module\SPGoogleMap</namespace> -->
+  <!-- <scriptfile>script.php</scriptfile> -->
+	<files>
+		<filename module="mod_spgooglemap">mod_spgooglemap.php</filename>
+		<folder>tmpl</folder>
+    <folder>Helper</folder>
+		<folder>language</folder>
+		<folder>assets</folder>
+    <filename>mod_spgooglemap.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/mod_spgooglemap.ini</language>
+		<language tag="en-GB">language/en-GB/mod_spgooglemap.sys.ini</language>
+	</languages>
+  <updateservers>
+      <server type="extension" priority="1" name="SP Google Map">https://www.symphonytheme.com/updates/j4/sp-google-map-update.xml</server>
+  </updateservers>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="map_lat"
+					type="text"
+					default="25.306696"
+					label="Latitude"
+					description="Enter latitude code"
+				/>
+				<field
+					name="map_lng"
+					type="text"
+					default="51.483189"
+					label="Longitude"
+					description="Enter longitude code"
+				/>
+				<field
+					name="map_zoom"
+					type="number"
+					min="3"
+					max="21"
+					default="14"
+					label="Map Zoom Level"
+					description="Set map zoom level"
+				/>
+				<field
+					name="map_width"
+					type="text"
+					default="100%"
+					label="Map Width"
+					description="Set map width (Unit: px or %)"
+				/>
+				<field
+					name="map_height"
+					type="text"
+					default="450px"
+					label="Map Height"
+					description="Set map height (Unit: px or %)"
+				/>
+                <field
+                    name="map_control"
+                    type="radio"
+                    default="0"
+                    class="btn-group btn-group-yesno"
+                    label="Disable Map Control"
+                    description="Disable map control panel or tool">
+                      <option value="0">JNO</option>
+                      <option value="1">JYES</option>
+                </field>
+				<field
+					name="infowindow"
+					type="list"
+					default="3"
+					label="Show Info Box"
+					description="Show info box based on Click or Hover on Map Marker and also you can set info box as Always Show or Not Show"
+					>
+					<option value="1">Show on Click to Marker</option>
+					<option value="2">Show on Hover to Marker</option>
+					<option value="3">Always Show</option>
+					<option value="0">Not Show</option>
+				</field>
+				<field
+					name="map_title"
+					type="text"
+					default="Google Map-Marker Address Title"
+					label="Info Box Title"
+					description="Enter info box title"
+				/>
+				<field
+					name="map_content"
+					type="textarea"
+					filter="safehtml"
+					default="Google map-marker address line 1 &lt;br /&gt; Google map-marker address line 2"
+					label="Info Box Description"
+					description="Enter info box description text"
+				/>
+				<field
+					name="map_api_key"
+					type="text"
+					label="Map API Key"
+					default="AIzaSyCJBFT2ULCTo6UXETdj5hJ5SEmTLMe_sXc"
+					description="Enter map API key"
+				/>
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="1"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					default="900"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+					>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
